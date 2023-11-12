@@ -20,20 +20,11 @@ func placeOrder(ID: Int, Category: String) async {
             }
 
             //### This is a little bit simplified. You may need to escape `username` and `password` when they can contain some special characters...
-//            let body = "category=1"
-//            let finalBody = body.data(using: .utf8)
             let encoder = JSONEncoder()
-//            encoder.outputFormatting = .prettyPrinted
-            let body = item(image: ID, category: Category)
-            let finalBody = try? encoder.encode(body)
-//            catch{
-//                print(finalBody)
-//            }
-//            print("\(finalBody)")
-    
+
     
             // Create a dictionary with your parameters
-            let parameters = ["led1": ID]
+            let parameters = [Category: ID]
 
             // Convert the parameters to Data
             let postData = parameters.map { "\($0.key)=\($0.value)" }
@@ -48,11 +39,7 @@ func placeOrder(ID: Int, Category: String) async {
             print("\(request.httpMethod!) \(request.url!)")
             print(request.allHTTPHeaderFields!)
             print(String(data: request.httpBody ?? Data(), encoding: .utf8)!)
-//            var request = URLRequest(url: url)
 //            request.httpMethod = "POST"
-////            request.httpBody = finalBody
-//            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            request.addValue("application/json", forHTTPHeaderField: "Accept")
             print(request)
 //            URLSession.shared.dataTask(with: request){
 //                (data, response, error) in
@@ -86,39 +73,28 @@ struct ContentView: View {
     var body: some View {
             NavigationView {
                 VStack {
-                    Button(LocalizedStringKey(stringLiteral: "OFF ")) {
+                    Button(LocalizedStringKey(stringLiteral: "Force OFF ")) {
                         Task(priority: .userInitiated) {
-                           _ = await placeOrder(ID: 0, Category: "test")
+                           _ = await placeOrder(ID: 0, Category: "led1")
+                           _ = await placeOrder(ID: 0, Category: "led2")
+                           _ = await placeOrder(ID: 0, Category: "led3")
+                           _ = await placeOrder(ID: 0, Category: "led4")
                         }
                     }
                     Button(LocalizedStringKey(stringLiteral: "ON")) {
                         Task(priority: .userInitiated) {
-                           _ = await placeOrder(ID: 1, Category: "test")
+                           _ = await placeOrder(ID: 1, Category: "led1")
                         }
                     }
-//                    .task(priority: .high, {
-//                        await placeOrder(ID: 0, Category: "test")
-//                    }) {
-//                        
-//                    }
-                    Text("Scan a document")
+                    Text("Scan a name to find it's mailbox")
                         .font(.title)
                         .padding()
                     DocumentScannerView()
                         .navigationBarTitle("")
-                        .navigationBarHidden(true)
+                        .navigationBarHidden(false)
                 }
             }
         }
-//    var body: some View {
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundStyle(.tint)
-//            Text("Hello, world!")
-//        }
-//        .padding()
-//    }
 }
 
 #Preview {

@@ -31,13 +31,13 @@ struct DocumentScannerView: UIViewControllerRepresentable {
         scannerViewController.delegate = context.coordinator
         
         // Add a button to start scanning
-        let scanButton = UIButton(type: .system)
+        let scanButton = UIButton(type: .roundedRect)
         scanButton.backgroundColor = UIColor.systemBlue
         scanButton.setTitle(DocumentScannerView.startScanLabel, for: .normal)
         scanButton.setTitleColor(UIColor.white, for: .normal)
         
         var config = UIButton.Configuration.filled()
-        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        config.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15)
         scanButton.configuration = config
         
         scanButton.addTarget(context.coordinator, action: #selector(Coordinator.startScanning(_:)), for: .touchUpInside)
@@ -112,18 +112,30 @@ struct DocumentScannerView: UIViewControllerRepresentable {
                 print("Text transcript - \(text.transcript)")
                 if (text.transcript.contains("Christopher Conly")){
                     Task(priority: .high) {
-                        _ = await placeOrder(ID: 1, Category: "test")
+                        _ = await placeOrder(ID: 1, Category: "led1")
                     }
                 }
                 else if(text.transcript.contains("Ameer Hantouli")){
                     Task(priority: .high) {
-                        _ = await placeOrder(ID: 0, Category: "test")
+                        _ = await placeOrder(ID: 1, Category: "led2")
                     }
                     
                 }
-                let frame = getRoundBoxFrame(item: item)
+                else if(text.transcript.contains("Jason Losh")){
+                    Task(priority: .high) {
+                        _ = await placeOrder(ID: 1, Category: "led3")
+                    }
+                    
+                }
+                else if(text.transcript.contains("Chris Mcmurrough")){
+                    Task(priority: .high) {
+                        _ = await placeOrder(ID: 1, Category: "led4")
+                    }
+                    
+                }
+//                let frame = getRoundBoxFrame(item: item)
                 // Adding the round box overlay to detected text
-                addRoundBoxToItem(frame: frame, text: text.transcript, item: item)
+//                addRoundBoxToItem(frame: frame, text: text.transcript, item: item)
             case .barcode:
                 break
             @unknown default:
