@@ -11,6 +11,8 @@
 		280F24B12B008A9400F1B4D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280F24B02B008A9400F1B4D9 /* ContentView.swift */; };
 		280F24B32B008A9600F1B4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280F24B22B008A9600F1B4D9 /* Assets.xcassets */; };
 		280F24B62B008A9600F1B4D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280F24B52B008A9600F1B4D9 /* Preview Assets.xcassets */; };
+		280F24BD2B008AC400F1B4D9 /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280F24BC2B008AC400F1B4D9 /* DocumentScannerView.swift */; };
+		280F24BF2B008AEB00F1B4D9 /* RoundedRectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280F24BE2B008AEB00F1B4D9 /* RoundedRectLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		280F24B02B008A9400F1B4D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		280F24B22B008A9600F1B4D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280F24B52B008A9600F1B4D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		280F24BC2B008AC400F1B4D9 /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
+		280F24BE2B008AEB00F1B4D9 /* RoundedRectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectLabel.swift; sourceTree = "<group>"; };
+		280F24C02B008CCD00F1B4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,8 @@
 		280F24A22B008A9400F1B4D9 = {
 			isa = PBXGroup;
 			children = (
+				280F24BE2B008AEB00F1B4D9 /* RoundedRectLabel.swift */,
+				280F24BC2B008AC400F1B4D9 /* DocumentScannerView.swift */,
 				280F24AD2B008A9400F1B4D9 /* HackUNT */,
 				280F24AC2B008A9400F1B4D9 /* Products */,
 			);
@@ -51,6 +58,7 @@
 		280F24AD2B008A9400F1B4D9 /* HackUNT */ = {
 			isa = PBXGroup;
 			children = (
+				280F24C02B008CCD00F1B4D9 /* Info.plist */,
 				280F24AE2B008A9400F1B4D9 /* HackUNTApp.swift */,
 				280F24B02B008A9400F1B4D9 /* ContentView.swift */,
 				280F24B22B008A9600F1B4D9 /* Assets.xcassets */,
@@ -137,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280F24BF2B008AEB00F1B4D9 /* RoundedRectLabel.swift in Sources */,
 				280F24B12B008A9400F1B4D9 /* ContentView.swift in Sources */,
 				280F24AF2B008A9400F1B4D9 /* HackUNTApp.swift in Sources */,
+				280F24BD2B008AC400F1B4D9 /* DocumentScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +285,10 @@
 				DEVELOPMENT_TEAM = PKN8DBN56P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HackUNT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HackUNT;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan mail";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -287,6 +301,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hussainalkatheri.HackUNT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,6 +321,10 @@
 				DEVELOPMENT_TEAM = PKN8DBN56P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HackUNT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HackUNT;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan mail";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +337,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hussainalkatheri.HackUNT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
